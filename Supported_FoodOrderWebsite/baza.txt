@@ -1,0 +1,36 @@
+CREATE TABLE ofw_admin(
+	id int PRIMARY KEY AUTO_INCREMENT,
+    full_name varchar(100),
+    username varchar(100),
+    password varchar(255)
+);
+CREATE TABLE ofw_order(
+	id int PRIMARY KEY AUTO_INCREMENT,
+    food varchar(150),
+    price varchar(255),
+    qty decimal(10,2),
+    total varchar(255),
+    order_date int,
+    status varchar(10),
+    customer_name varchar(10),
+    customer_contact varchar(30),
+    customer_email varchar(30),
+    customer_address varchar(30)
+);
+CREATE TABLE ofw_category(
+	id int PRIMARY KEY AUTO_INCREMENT,
+    title varchar(100),
+    image_name varchar(255),
+    featured varchar(10),
+    active varchar(10)
+);
+CREATE TABLE ofw_food(
+	id int PRIMARY KEY AUTO_INCREMENT,
+    title varchar(30),
+    description varchar(255),
+    price decimal(10,2),
+    image_name varchar(255),
+    category_id int,
+    featured varchar(30),
+    active varchar(10)
+);
