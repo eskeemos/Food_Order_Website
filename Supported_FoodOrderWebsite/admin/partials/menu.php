@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Food Order Webiste - Home Page</title>
-        <link rel="stylesheet" href="../css/admin.css">
+        <link rel="stylesheet" href="../css/admins.css">
     </head>
     <body>
         <div class="menu">
