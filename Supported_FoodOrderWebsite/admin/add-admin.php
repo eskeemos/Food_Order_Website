@@ -4,7 +4,14 @@
     <div class="wrapper">
         <h1>Add Admin</h1>
 
-        <br>
+        <br><br>
+
+        <?php 
+            if(isset($_SESSION['add'])){
+                echo $_SESSION['add'];
+                unset($_SESSION['add']);
+            }
+        ?>
 
         <form action="" method="POST">
             <table class="tb-30">
@@ -47,10 +54,17 @@
 
         $sql = "INSERT INTO ofw_admin VALUES(NULL,'$full_name','$username','$password');";
 
-        $conn = mysqli_connect('localhost','root','')              or die(mysqli_error());
-        $db_select = mysqli_select_db($conn,"supp_order_food_web") or die(mysqli_error());
-        $res = mysqli_query($conn,$sql)                            or die(mysqli_error());
+        $res = mysqli_query($conn,$sql) or die(mysqli_error());
 
+        if('res'){
+            // echo 'Data inserted';
+            $_SESSION['add'] = "Admin Added Sucessfully";
+            header('location:'.SITEURL.'admin/manage-admin.php');
+        }else{
+            //echo 'Falied to insert data';
+            $_SESSION['add'] = "Falied to insert data";
+            header('location:'.SITEURL.'admin/add-admin.php');
+        }
     }
 
 ?>
