@@ -9,9 +9,11 @@
     $res = mysqli_query($conn, $sql);
 
     if($res){
-        echo "Admin deleted";
+        $_SESSION['delete'] = "<div class='success'>Admin deleted sucessfully.</div>";
+        header('location:'.SITEURL."/admin/manage-admin.php");
     }else{
-        echo "Failed to delete admin";
+        $_SESSION['delete'] = "<div class='error'>Failed to delete admin</div>";
+        header('location:'.SITEURL."/admin/manage-admin.php");
     }
 
 

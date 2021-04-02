@@ -93,3 +93,9 @@ table tr td{
 .tb-30{
     width: 30%;
 }
+.success{
+    color: green;
+}
+.error{
+    color: red;
+}
