@@ -57,12 +57,10 @@
         $res = mysqli_query($conn,$sql) or die(mysqli_error());
 
         if('res'){
-            // echo 'Data inserted';
-            $_SESSION['add'] = "Admin Added Sucessfully";
+            $_SESSION['add'] = "<div class='success'>Admin Added Sucessfully</div>";
             header('location:'.SITEURL.'admin/manage-admin.php');
         }else{
-            //echo 'Falied to insert data';
-            $_SESSION['add'] = "Falied to insert data";
+            $_SESSION['add'] = "<div class='success'>Falied to insert data</div>";
             header('location:'.SITEURL.'admin/add-admin.php');
         }
     }
