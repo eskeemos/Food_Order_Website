@@ -55,9 +55,29 @@
         if($res){
             $count = mysqli_num_rows($res);
             if($count === 1){
-                echo 'y';
+
+                if($new_password === $confirm_password){
+                    $sql2 = "UPDATE ofw_admin SET password = '$new_password' WHERE id = $id";
+
+                    $res2 = mysqli_query($conn, $sql2);
+
+                    if($res2){
+                        $_SESSION['change-pwd'] = "<div class='success'>Password updated successfully</div>";
+                        header("location:".SITEURL."admin/manage-admin.php");
+                    }else{
+                        $_SESSION['change-pwd'] = "<div class='error'>Failed to update password/div>";
+                        header("location:".SITEURL."admin/manage-admin.php");
+                    }
+                }else{
+                    $_SESSION['pwd-not-match'] = "<div class='error'>Password did not match</div>";
+                    header("location:".SITEURL."admin/manage-admin.php");
+                }
+
+                // $_SESSION['user-not-found'] = "<div class='error'>Password updated successfully</div>";
+                // header("location:".SITEURL."admin/manage-admin.php");
             }else{  
-                echo 'n';
+                $_SESSION['user-not-found'] = "<div class='error'>User not found</div>";
+                header("location:".SITEURL."admin/manage-admin.php");
             }
         }
     }
