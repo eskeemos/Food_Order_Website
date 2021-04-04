@@ -99,3 +99,9 @@ table tr td{
 .error{
     color: red;
 }
+.login{
+    border: 1px solid grey;
+    width: 30%;
+    padding: 2%;
+    margin: 10% auto;
+}
