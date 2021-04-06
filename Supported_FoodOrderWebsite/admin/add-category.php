@@ -34,14 +34,14 @@
                         <td>Featured:</td>
                         <td>
                             <input type="radio" name="featured" value="yes"> Yes
-                            <input type="radio" name="featured" value="no"> No
+                            <input type="radio" name="featured" value="no" checked> No
                         </td>
                     </tr>
                     <tr>
                         <td>Active:</td>
                         <td>
                             <input type="radio" name="active" value="yes"> Yes
-                            <input type="radio" name="active" value="no"> No
+                            <input type="radio" name="active" value="no" checked> No
                         </td>
                     </tr>
                     <tr>
@@ -66,7 +66,7 @@
                     }else{
                         $active = 'no';
                     }
-                    if(isset($_FILES['image']['name'])){
+                    if($_FILES['image']['name'] !== ""){
                         $image_name = $_FILES['image']['name'];
 
                         $ext = end(explode('.',$image_name));
@@ -81,7 +81,6 @@
                             header("loaction:".SITEURL."admin/add-category.php");
                             die();
                         }
-
                     }else{
                         $image_name = "";
                     }
