@@ -13,7 +13,6 @@
             if(!$remove){
                 $_SESSION["remove"] = "<div class='error'>Failed to remove category image</div>";
                 header("location:".SITEURL."admin/manage-categories.php");
-
                 die();
             }
         }

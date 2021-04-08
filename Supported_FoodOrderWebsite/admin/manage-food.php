@@ -10,6 +10,26 @@
                 echo $_SESSION['add'];
                 unset($_SESSION['add']);
             }
+            if(isset($_SESSION['delete'])){
+                echo $_SESSION['delete'];
+                unset($_SESSION['delete']);
+            }
+            if(isset($_SESSION['upload'])){
+                echo $_SESSION['upload'];
+                unset($_SESSION['upload']);
+            }
+            if(isset($_SESSION['update'])){
+                echo $_SESSION['update'];
+                unset($_SESSION['update']);
+            }
+            if(isset($_SESSION['remove'])){
+                echo $_SESSION['remove'];
+                unset($_SESSION['remove']);
+            }
+            if(isset($_SESSION['unothorized'])){
+                echo $_SESSION['unothorized'];
+                unset($_SESSION['unothorized']);
+            }
 
         ?>
         <br>
@@ -35,6 +55,7 @@
                 $count = mysqli_num_rows($res);
                 if($count > 0){
                     while($row = mysqli_fetch_assoc($res)){
+                        $id = $row['id'];
                         $title = $row['title'];
                         $price = $row['price'];
                         $image = $row['image_name'];
@@ -59,8 +80,8 @@
                             <td><?php echo  $featured; ?></td>
                             <td><?php echo  $active; ?></td>
                             <td>
-                                <a href="#" class='btn-secondary'>Update Food</a>
-                                <a href="#" class='btn-danger'>Delete Food</a>
+                                <a href="<?php echo SITEURL; ?>admin/update-food.php?id=<?php echo $id ?>" class='btn-secondary'>Update Food</a>
+                                <a href="<?php echo SITEURL; ?>admin/delete-food.php?id=<?php echo $id ?>&image_name=<?php echo $image ?>" class='btn-danger'>Delete Food</a>
                             </td>
                         </tr>
                     <?php
