@@ -126,7 +126,7 @@
                 $description = $_POST['description'];
                 $price = $_POST['price'];
                 $current_image = $_POST['current_image'];
-                $category = $_POST['category'];
+                $category_id = $_POST['category'];
                 $featured = $_POST['featured'];
                 $active = $_POST['active'];
 
