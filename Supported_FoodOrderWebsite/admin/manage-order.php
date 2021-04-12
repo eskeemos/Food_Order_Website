@@ -3,6 +3,13 @@
 <div class="main-content">
     <div class="wrapper">
         <h1>Manage Order</h1>
+        <br><br>
+        <?php
+            if(isset($_SESSION['update'])){
+                echo $_SESSION['update'];
+                unset($_SESSION['update']);
+            }
+        ?>
         <table class="tb-full">
             <tr>
                 <th>S.N.</th>
@@ -45,7 +52,19 @@
                             <td><?php echo $qty; ?></td>
                             <td><?php echo $total; ?></td>
                             <td><?php echo $order_date; ?></td>
-                            <td><?php echo $status; ?></td>
+                            <td>
+                                <?php 
+                                    if($status == "ordered"){
+                                        echo "<label>$status</label>";
+                                    }elseif($status == "on delivery"){
+                                        echo "<label style='color:orangered'>$status</label>";
+                                    }elseif($status == "delivered"){
+                                        echo "<label style='color:green'>$status</label>";
+                                    }elseif($status == "cancelled"){
+                                        echo "<label style='color:red'>$status</label>";
+                                    }  
+                                ?>
+                            </td>
                             <td><?php echo $customer_name; ?></td>
                             <td><?php echo $customer_contact; ?></td>
                             <td><?php echo $customer_email; ?></td>
