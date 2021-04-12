@@ -199,6 +199,14 @@ fieldset{
     margin-bottom: 1%; 
     font-weight: bold;
 }
+.error{
+    padding: 2%;
+    color: red;
+}
+.success{
+    padding: 2%;
+    color: green;
+}
 
 
 
@@ -257,3 +265,4 @@ fieldset{
         width: 100%;
     }
 }
+
