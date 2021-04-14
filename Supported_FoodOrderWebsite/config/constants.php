@@ -1,7 +1,7 @@
 <?php 
 
     session_start();
-    define('SITEURL','http://localhost/PHP/Supported_FoodOrderWebsite/');
+    define('SITEURL','http://localhost/PHP_SUPP/Supported_FoodOrderWebsite/');
     define('LOCALHOST','localhost');
     define('DB_USERNAME','root');
     define('DB_PASSWORD','');
